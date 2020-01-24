@@ -11,8 +11,14 @@ public class CaesarCipherTest {
     }
 
     @Test
-    public void newCaesarCipher_getsString_A() {
+    public void getInputString_getsString_A() throws Exception {
         CaesarCipher testCaesarCipher = new CaesarCipher("A", 1);
         assertEquals("A", testCaesarCipher.getInputString());
+    }
+
+    @Test
+    public void getShiftKey_getsIntShiftKey_1() throws Exception {
+        CaesarCipher testCaesarCipher = new CaesarCipher("A", 1);
+        assertEquals(1, testCaesarCipher.getShiftKey());
     }
 }
