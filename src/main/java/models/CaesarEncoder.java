@@ -6,7 +6,8 @@ public class CaesarEncoder {
 
     public CaesarEncoder(String userInputText, int userShiftKey) { }
 
-    public void setUserInputText() {
+    public String setUserInputText() {
         this.userInputText = encodeCaesarCipher.getInputString();
+        return this.userInputText;
     }
 }

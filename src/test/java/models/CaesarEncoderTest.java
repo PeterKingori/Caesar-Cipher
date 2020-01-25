@@ -1,6 +1,9 @@
 package models;
 
 import org.junit.Test;
+
+import java.lang.reflect.Field;
+
 import static org.junit.Assert.*;
 
 public class CaesarEncoderTest {
@@ -11,9 +14,9 @@ public class CaesarEncoderTest {
     }
 
     @Test
-    public void testSetEncodingUserInput_SetsVariableCorrectly_String() throws Exception {
-        CaesarEncoder testCaesarEncoder = new CaesarEncoder("", 1);
-        assertEquals("", testCaesarEncoder.setEncodingUserInput());
+    public void testSetUserInputText_setsUserTextProperly() throws Exception {
+        CaesarEncoder testCaesarEncoder = new CaesarEncoder("", 0);
+        assertEquals("", testCaesarEncoder.setUserInputText());
     }
 
 }
