@@ -28,6 +28,19 @@ public class CaesarCipherEncoderTest {
                 "A", 20);
         assertEquals("U", testCaesarCipherEncoder.encryptUserText());
     }
+    @Test
+    public void encryptUserText_encryptsTwoLetterString_String() throws Exception {
+        CaesarCipherEncoder testCaesarCipherEncoder=new CaesarCipherEncoder(
+                "TH", 23);
+        assertEquals("QE", testCaesarCipherEncoder.encryptUserText());
+    }
+    @Test
+    public void encryptUserText_encryptsMultipleLetterString_String() throws Exception {
+        CaesarCipherEncoder testCaesarCipherEncoder=new CaesarCipherEncoder(
+                "BROWNFOX", 23);
+        assertEquals("YOLTKCLU", testCaesarCipherEncoder.encryptUserText());
+    }
+
 
 
 }

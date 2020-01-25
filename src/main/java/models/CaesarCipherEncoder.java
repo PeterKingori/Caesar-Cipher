@@ -1,11 +1,11 @@
 package models;
+import java.util.List;
+import java.util.ArrayList;
 
 public class CaesarCipherEncoder {
     private String userInput;
     private int shiftKey;
-    private int newCharValue;
-    private char encodedChar;
-    private String encodedString;
+    private List<String> userOutput = new ArrayList<String>();
 
 
     public CaesarCipherEncoder(String userInput, int shiftKey) {
@@ -15,11 +15,12 @@ public class CaesarCipherEncoder {
 
     public String encryptUserText() {
         for (int i = 0; i < userInput.length(); i++) {
-            newCharValue = ((int)(userInput.charAt(i)) + shiftKey - 65) % 26 + 65;
-            encodedChar = (char)(newCharValue);
-            encodedString = Character.toString(encodedChar);
+            int newCharValue = ((int) (userInput.charAt(i)) + shiftKey - 65) % 26 + 65;
+            char encodedChar = (char) (newCharValue);
+            String encodedString = Character.toString(encodedChar);
+            userOutput.add(encodedString);
         }
-        return encodedString;
+        return String.join("", userOutput);
     }
 
 
@@ -33,16 +34,3 @@ public class CaesarCipherEncoder {
 
 
 }
-
-
-//    public String encryptUserText() {
-//        for (int i = 0; i < userInput.length(); i++) {
-//            if (Character.isUpperCase(userInput.charAt(i))) {
-//                int charValue = Character.getNumericValue(userInput.charAt(i));
-//                int charCipherValue = (charValue + shiftKey);
-//                newChar = (char)(charCipherValue);
-//                encodedChar = newChar.toString();
-//            }
-//        }
-//        return encodedChar;
-//    }
