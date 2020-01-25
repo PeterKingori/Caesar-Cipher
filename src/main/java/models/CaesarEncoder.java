@@ -1,14 +1,13 @@
 package models;
 
 public class CaesarEncoder {
-    private String receivedUserInput;
+    private String encodingUserInput;
     CaesarCipher encodeCaesarCipher = new CaesarCipher("", 0);
 
-    public CaesarEncoder(String receivedUserInput, int receivedKey) { }
+    public CaesarEncoder(String encodingUserInput, int receivedKey) { }
 
-    public String CaesarEncoderInput() {
-        receivedUserInput = encodeCaesarCipher.getInputString();
-        this.receivedUserInput = receivedUserInput;
-        return this.receivedUserInput;
+    public String setEncodingUserInput() {
+        this.encodingUserInput = encodeCaesarCipher.getInputString();
+        return this.encodingUserInput;
     }
 }

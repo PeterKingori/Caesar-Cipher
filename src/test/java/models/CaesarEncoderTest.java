@@ -10,10 +10,10 @@ public class CaesarEncoderTest {
         assertEquals(true, testCaesarEncoder instanceof CaesarEncoder);
     }
 
-
     @Test
-    public void getInputStringFromCaesarCipherClass_getsString_String() throws Exception {
+    public void testSetEncodingUserInput_SetsVariableCorrectly_String() throws Exception {
         CaesarEncoder testCaesarEncoder = new CaesarEncoder("", 1);
-        assertEquals("", testCaesarEncoder.CaesarEncoderInput());
+        assertEquals("", testCaesarEncoder.setEncodingUserInput());
     }
+
 }
