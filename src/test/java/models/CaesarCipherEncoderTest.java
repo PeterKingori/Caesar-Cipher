@@ -21,4 +21,13 @@ public class CaesarCipherEncoderTest {
         CaesarCipherEncoder testCaesarCipher = new CaesarCipherEncoder("A", 1);
         assertEquals(1, testCaesarCipher.getShiftKey());
     }
+
+    @Test
+    public void encryptUserText_encryptsOneLetterString_Character() throws Exception {
+        CaesarCipherEncoder testCaesarCipherEncoder=new CaesarCipherEncoder(
+                "A", 20);
+        assertEquals("U", testCaesarCipherEncoder.encryptUserText());
+    }
+
+
 }
