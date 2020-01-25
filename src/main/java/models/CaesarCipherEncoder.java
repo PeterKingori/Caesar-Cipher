@@ -20,10 +20,13 @@ public class CaesarCipherEncoder {
                 char encodedChar = (char) (newCharValue);
                 String encodedString = Character.toString(encodedChar);
                 userOutput.add(encodedString);
-            } else {
+            } else if (Character.isLowerCase(userInput.charAt(i))) {
                 int newCharValue = ((int) (userInput.charAt(i)) + shiftKey - 97) % 26 + 97;
                 char encodedChar = (char) (newCharValue);
                 String encodedString = Character.toString(encodedChar);
+                userOutput.add(encodedString);
+            } else {
+                String encodedString = Character.toString(userInput.charAt(i));
                 userOutput.add(encodedString);
             }
         }
