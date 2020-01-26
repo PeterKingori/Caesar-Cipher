@@ -9,10 +9,10 @@ public class CaesarCipherDecoderTest {
         CaesarCipherDecoder testCaesarCipherDecoder = new CaesarCipherDecoder("A", 1);
         assertEquals(true, testCaesarCipherDecoder instanceof CaesarCipherDecoder);
     }
-
     @Test
     public void newCaesarCipherDecoder_getUserText_String() {
         CaesarCipherDecoder testCaesarCipherDecoder = new CaesarCipherDecoder("", 1);
         assertEquals("", testCaesarCipherDecoder.getUserText());
     }
+
 }
