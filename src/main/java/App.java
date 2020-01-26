@@ -29,7 +29,7 @@ public class App {
             CaesarCipherDecoder caesarCipherDecoder = new CaesarCipherDecoder(userInputText,
                     inputKey);
             String decodingResult = caesarCipherDecoder.decodeUserText();
-            System.out.println("Encrytped Text: " + decodingResult);
+            System.out.println("Decrytped Text: " + decodingResult);
         }
     }
 }
