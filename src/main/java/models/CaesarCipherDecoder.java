@@ -1,15 +1,15 @@
 package models;
-import models.CaesarCipherEncoder;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CaesarCipherDecoder {
+    private CaesarCipherEncoder EncoderDetails = new CaesarCipherEncoder("", 0);
+
     private String userText;
     private int decodeKey;
     private List<String> decodedOutput = new ArrayList<String>();
 
-    private CaesarCipherEncoder EncoderDetails = new CaesarCipherEncoder("", 0);
 
     public CaesarCipherDecoder(String userText, int decodeKey) {
         this.userText = userText;
@@ -24,6 +24,7 @@ public class CaesarCipherDecoder {
         this.decodeKey = EncoderDetails.getShiftKey();
         return this.decodeKey;
     }
+
     public String decodeUserText() {
         for (int i = 0; i < userText.length(); i++) {
             if (Character.isUpperCase(userText.charAt(i))) {
@@ -32,7 +33,7 @@ public class CaesarCipherDecoder {
                 String decodedString = Character.toString(decodedChar);
                 decodedOutput.add(decodedString);
             } else if (Character.isLowerCase(userText.charAt(i))) {
-                int decodedValue = ((int)(userText.charAt(i)) + (26-decodeKey)  - 97) % 26 + 97;
+                int decodedValue = ((int)(userText.charAt(i)) + (26 - decodeKey)  - 97) % 26 + 97;
                 char decodedChar = (char)(decodedValue);
                 String decodedString = Character.toString(decodedChar);
                 decodedOutput.add(decodedString);
