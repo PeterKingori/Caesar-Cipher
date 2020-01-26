@@ -14,5 +14,10 @@ public class CaesarCipherDecoderTest {
         CaesarCipherDecoder testCaesarCipherDecoder = new CaesarCipherDecoder("", 1);
         assertEquals("", testCaesarCipherDecoder.getUserText());
     }
+    @Test
+    public void newCaesarCipherDecoder_getUserShiftKey_int() {
+        CaesarCipherDecoder testCaesarCipherDecoder = new CaesarCipherDecoder("", 0);
+        assertEquals(0, testCaesarCipherDecoder.getUserKey());
+    }
 
 }
