@@ -44,7 +44,7 @@ public class CaesarCipherEncoderTest {
         assertEquals("VyyuEZdkLVOC", testCaesarCipherEncoder.encryptUserText());
     }
     @Test
-    public void encryptUserText_encryptsStringWithASpaceInBetweenTwoLetters_String() throws Exception {
+    public void encryptUserText_encryptsStringWithASpaceInBetweenTwoStrings_String() throws Exception {
         CaesarCipherEncoder testCaesarCipherEncoder=new CaesarCipherEncoder(
                 "Bye BYE", 13);
         assertEquals("Olr OLR", testCaesarCipherEncoder.encryptUserText());

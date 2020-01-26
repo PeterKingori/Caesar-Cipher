@@ -36,6 +36,9 @@ public class CaesarCipherDecoder {
                 char decodedChar = (char)(decodedValue);
                 String decodedString = Character.toString(decodedChar);
                 decodedOutput.add(decodedString);
+            } else {
+                String encodedString = Character.toString(userText.charAt(i));
+                decodedOutput.add(encodedString);
             }
         }
         return String.join("", decodedOutput);
