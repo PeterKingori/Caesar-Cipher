@@ -16,13 +16,13 @@ public class CaesarCipherEncoder {
     public String encryptUserText() {
         for (int i = 0; i < userInput.length(); i++) {
             if (Character.isUpperCase(userInput.charAt(i))) {
-                int newCharValue = ((int) (userInput.charAt(i)) + shiftKey - 65) % 26 + 65;
-                char encodedChar = (char) (newCharValue);
+                int newCharValue = ((int)(userInput.charAt(i)) + shiftKey - 65) % 26 + 65;
+                char encodedChar = (char)(newCharValue);
                 String encodedString = Character.toString(encodedChar);
                 userOutput.add(encodedString);
             } else if (Character.isLowerCase(userInput.charAt(i))) {
-                int newCharValue = ((int) (userInput.charAt(i)) + shiftKey - 97) % 26 + 97;
-                char encodedChar = (char) (newCharValue);
+                int newCharValue = ((int)(userInput.charAt(i)) + shiftKey - 97) % 26 + 97;
+                char encodedChar = (char)(newCharValue);
                 String encodedString = Character.toString(encodedChar);
                 userOutput.add(encodedString);
             } else {

@@ -49,5 +49,12 @@ public class CaesarCipherEncoderTest {
                 "Bye BYE", 13);
         assertEquals("Olr OLR", testCaesarCipherEncoder.encryptUserText());
     }
+    @Test
+    public void encryptUserText_encryptsStringWithMultipleWordsWithSpacesAndSpecialCharacters_String() throws Exception {
+        CaesarCipherEncoder testCaesarCipherEncoder=new CaesarCipherEncoder(
+                "1. Kwesta%Khethile Khethile ft. @Makwa", 5);
+        assertEquals("1. Pbjxyf%Pmjymnqj Pmjymnqj ky. @Rfpbf",
+                testCaesarCipherEncoder.encryptUserText());
+    }
 
 }
