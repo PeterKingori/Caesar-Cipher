@@ -26,10 +26,17 @@ public class CaesarCipherDecoder {
     }
     public String decodeUserText() {
         for (int i = 0; i < userText.length(); i++) {
-            int decodedValue = ((int)(userText.charAt(i)) - decodeKey + 65) % 26 + 65;
-            char decodedChar = (char)(decodedValue);
-            String decodedString = Character.toString(decodedChar);
-            decodedOutput.add(decodedString);
+            if (Character.isUpperCase(userText.charAt(i))) {
+                int decodedValue = ((int)(userText.charAt(i)) - decodeKey + 65) % 26 + 65;
+                char decodedChar = (char)(decodedValue);
+                String decodedString = Character.toString(decodedChar);
+                decodedOutput.add(decodedString);
+            } else if (Character.isLowerCase(userText.charAt(i))) {
+                int decodedValue = ((int)(userText.charAt(i)) + (26-decodeKey)  - 97) % 26 + 97;
+                char decodedChar = (char)(decodedValue);
+                String decodedString = Character.toString(decodedChar);
+                decodedOutput.add(decodedString);
+            }
         }
         return String.join("", decodedOutput);
     }
