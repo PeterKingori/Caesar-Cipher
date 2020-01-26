@@ -1,10 +1,13 @@
 package models;
 import models.CaesarCipherEncoder;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CaesarCipherDecoder {
     private String userText;
     private int decodeKey;
-    private String decodedString;
+    private List<String> decodedOutput = new ArrayList<String>();
 
     private CaesarCipherEncoder EncoderDetails = new CaesarCipherEncoder("", 0);
 
@@ -22,9 +25,12 @@ public class CaesarCipherDecoder {
         return this.decodeKey;
     }
     public String decodeUserText() {
-            int decodedValue = ((int)(userText.charAt(0)) - decodeKey - 65) % 26 + 65;
+        for (int i = 0; i < userText.length(); i++) {
+            int decodedValue = ((int)(userText.charAt(i)) - decodeKey - 65) % 26 + 65;
             char decodedChar = (char)(decodedValue);
-            decodedString = Character.toString(decodedChar);
-        return decodedString;
+            String decodedString = Character.toString(decodedChar);
+            decodedOutput.add(decodedString);
+        }
+        return String.join("", decodedOutput);
     }
 }
