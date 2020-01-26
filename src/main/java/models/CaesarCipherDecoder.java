@@ -26,7 +26,7 @@ public class CaesarCipherDecoder {
     }
     public String decodeUserText() {
         for (int i = 0; i < userText.length(); i++) {
-            int decodedValue = ((int)(userText.charAt(i)) - decodeKey - 65) % 26 + 65;
+            int decodedValue = ((int)(userText.charAt(i)) - decodeKey + 65) % 26 + 65;
             char decodedChar = (char)(decodedValue);
             String decodedString = Character.toString(decodedChar);
             decodedOutput.add(decodedString);

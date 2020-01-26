@@ -29,5 +29,10 @@ public class CaesarCipherDecoderTest {
         CaesarCipherDecoder testCaesarCipherDecoder=new CaesarCipherDecoder("TH", 1);
         assertEquals("SG", testCaesarCipherDecoder.decodeUserText());
     }
+    @Test
+    public void decodesUserText_decodesMultipleLetterString_String() throws Exception {
+        CaesarCipherDecoder testCaesarCipherDecoder=new CaesarCipherDecoder("YOLTKCLU", 23);
+        assertEquals("BROWNFOX", testCaesarCipherDecoder.decodeUserText());
+    }
 
 }
