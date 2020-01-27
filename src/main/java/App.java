@@ -11,11 +11,13 @@ public class App {
         boolean programRunning = true;
 
         while (programRunning) {
-            System.out.println("I am a Caesar Cipher program. Choose one of the following options: " +
-                    "Encrypt, Decrypt or Exit");
+            System.out.println("I am a Caesar Cipher program. Choose one of the following options:");
+            System.out.println("1. Encrypt");
+            System.out.println("2. Decrypt");
+            System.out.println("3. Exit");
             try {
                 String choice = bufferedReader.readLine();
-                if(choice.equals("Encrypt")) {
+                if(choice.equals("1")) {
                     System.out.println("Enter the text that you want to be encrypted:");
                     String userInputText = bufferedReader.readLine();
                     System.out.println("Enter an integer that you want to use as the encoding key:");
@@ -24,7 +26,7 @@ public class App {
                     CaesarCipherEncoder caesarCipherEncoder = new CaesarCipherEncoder(userInputText,inputKey);
                     String encodingResult = caesarCipherEncoder.encryptUserText();
                     System.out.println("Encrytped Text: " + encodingResult);
-                } else if (choice.equals("Decrypt")) {
+                } else if (choice.equals("2")) {
                     System.out.println("Enter the text that you want to be decrypted:");
                     String userInputText = bufferedReader.readLine();
                     System.out.println("Enter an integer that you want to use as the decoding key:");
@@ -34,7 +36,7 @@ public class App {
                             inputKey);
                     String decodingResult = caesarCipherDecoder.decodeUserText();
                     System.out.println("Decrytped Text: " + decodingResult);
-                } else if (choice.equals("Exit")) {
+                } else if (choice.equals("3")) {
                     System.out.println("Goodbye!");
                     programRunning = false;
                 } else {
