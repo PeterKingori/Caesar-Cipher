@@ -17,6 +17,7 @@ public class App {
         // CaesarCipherDecoder classes at the beginning of the program instead of when the
         // program is running. This will make the program run more efficiently instead of having
         CaesarCipherEncoder encoder = new CaesarCipherEncoder("", 0);
+        CaesarCipherDecoder decoder = new CaesarCipherDecoder("", 0);
 
         while (programRunning) {
             System.out.println("I am a Caesar Cipher program. Choose one of the following options:");
@@ -45,9 +46,9 @@ public class App {
                     System.out.println("Enter an integer that you want to use as the decoding key:");
                     String stringInputKey = bufferedReader.readLine();
                     int inputKey = Integer.parseInt(stringInputKey);
-                    CaesarCipherDecoder caesarCipherDecoder = new CaesarCipherDecoder(userInputText,
-                            inputKey);
-                    String decodingResult = caesarCipherDecoder.decodeUserText();
+                    decoder.setUserText(userInputText);
+                    decoder.setUserKey(inputKey);
+                    String decodingResult = decoder.decodeUserText();
                     System.out.println("Decrytped Text: " + decodingResult);
                 } else if (choice.equals("3")) {
                     System.out.println("Goodbye!");
