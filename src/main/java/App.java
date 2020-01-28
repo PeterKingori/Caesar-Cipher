@@ -7,8 +7,16 @@ import java.io.InputStreamReader;
 
 public class App {
     public static void main(String[] args) throws IOException {
+        //TODO: Research on Java data persistency and use it to add functionality so that the
+        // encoded message can be picked up by the decoder function and decoded to the original
+        // input from the user.
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         boolean programRunning = true;
+
+        // Initialize the constructor to create new instances of the CaesarCipherEncoder and
+        // CaesarCipherDecoder classes at the beginning of the program instead of when the
+        // program is running. This will make the program run more efficiently instead of having
+        CaesarCipherEncoder encoder = new CaesarCipherEncoder("", 0);
 
         while (programRunning) {
             System.out.println("I am a Caesar Cipher program. Choose one of the following options:");
@@ -23,8 +31,13 @@ public class App {
                     System.out.println("Enter an integer that you want to use as the encoding key:");
                     String stringInputKey = bufferedReader.readLine();
                     int inputKey = Integer.parseInt(stringInputKey);
-                    CaesarCipherEncoder caesarCipherEncoder = new CaesarCipherEncoder(userInputText,inputKey);
-                    String encodingResult = caesarCipherEncoder.encryptUserText();
+                    // The constructor is moved to the top of the program
+                    // CaesarCipherEncoder caesarCipherEncoder=new CaesarCipherEncoder(userInputText,inputKey);
+                    //Use the setter methods  in CaesarCipherEncoder.java to set the values
+                    // entered by the user as values to be used
+                    encoder.setUserText(userInputText);
+                    encoder.setUserKey(inputKey);
+                    String encodingResult = encoder.encryptUserText();
                     System.out.println("Encrytped Text: " + encodingResult);
                 } else if (choice.equals("2")) {
                     System.out.println("Enter the text that you want to be decrypted:");
