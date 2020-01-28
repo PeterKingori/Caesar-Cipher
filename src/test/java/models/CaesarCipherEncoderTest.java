@@ -1,8 +1,10 @@
 package models;
 
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
-
+// TODO: Use @Before public void to refactor code and remove repeated object creation of
+//  CaesarCipherEncoder class
 public class CaesarCipherEncoderTest {
     @Test
     public void newCaesarCipher_instantiatesCorrectly() throws Exception {
